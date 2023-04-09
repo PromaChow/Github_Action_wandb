@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import wandb
 
 # Initialize Weights and Biases
-wandb.init(project='github_action project', entity='manishrai727')
+wandb.init(project='GithubAction_wandb', entity='manishrai727')
 
 # Log hyperparameters
 config = wandb.config
@@ -31,7 +31,7 @@ def mse(y_test, y_pred):
   return tf.metrics.mean_squared_error(y_test, y_pred)
 
 # Generate data
-X = np.arange(-100, 100, 4).reshape(-1, 1)
+X = np.arange(-100, 100, 4)
 y = np.arange(-90, 110, 4)
 
 # Split into training and testing data
@@ -41,9 +41,6 @@ y_train = y[:N]
 
 X_test = X[N:]
 y_test = y[N:]
-# Reshape X_train and X_test
-X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
-X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
 
 input_shape = X[0].shape 
 output_shape = y[0].shape
