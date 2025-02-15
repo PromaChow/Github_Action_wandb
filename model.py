@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import wandb
 
 # Initialize Weights and Biases
-wandb.init(project='Github_Actions', entity='manishrai727', name = 'Github_Action_CICD')
+wandb.init(project='Github_Actions', entity='bsse1132', name = 'Github_Action_CICD')
 
 # Log hyperparameters
 config = wandb.config
