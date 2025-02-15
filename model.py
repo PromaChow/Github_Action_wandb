@@ -4,7 +4,16 @@ import matplotlib.pyplot as plt
 import wandb
 
 # Initialize Weights and Biases
-wandb.init(project='Github_Actions', entity='bsse1132', name = 'Github_Action_CICD')
+api = wandb.Api()
+default_entity = api.default_entity
+
+# Initialize wandb with the retrieved entity name
+wandb.init(
+    project='Github_Actions',  # Your project name
+    entity=default_entity,     # Automatically retrieved entity name
+    name='Github_Action_CICD'  # Your run name
+)
+
 
 # Log hyperparameters
 config = wandb.config
